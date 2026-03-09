@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제휴 문의 - Lotto Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap" rel="stylesheet">
+  <script defer type="module">
+    import { initTheme } from './theme.js';
+    initTheme();
+  </script>
+</head>
+<body>
+  <header>
+    <h1>로또 번호 생성기</h1>
+    <nav>
+      <a href="index.html" class="nav-link">홈</a>
+      <a href="contact.html" class="nav-link active">제휴 문의</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle Theme">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+  </header>
+  <main>
+    <section class="contact-container">
+      <div class="card">
+        <h2>제휴 및 협력 문의</h2>
+        <p>함께 성장할 파트너를 찾고 있습니다. 아래 양식을 작성해 주세요.</p>
+        
+        <form action="https://formspree.io/f/mpqyqygk" method="POST">
+          <div class="form-group">
+            <label for="name">성함/기업명</label>
+            <input type="text" id="name" name="name" required placeholder="홍길동 / (주)파트너">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" name="_replyto" required placeholder="example@email.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" required placeholder="제휴 제안 내용을 자유롭게 작성해 주세요."></textarea>
+          </div>
+          
+          <!-- Formspree configuration -->
+          <input type="hidden" name="_subject" value="신규 제휴 문의">
+          
+          <button type="submit" class="btn-submit">문의 보내기</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 Lotto Generator. All rights reserved.</p>
+  </footer>
+</body>
+</html>

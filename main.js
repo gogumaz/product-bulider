@@ -1,19 +1,7 @@
-// Theme Toggle Logic
-const themeToggle = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+import { initTheme } from './theme.js';
 
-themeToggle.addEventListener('click', () => {
-  const currentTheme = htmlElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  htmlElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-});
-
-// Load saved theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  htmlElement.setAttribute('data-theme', savedTheme);
-}
+// Initialize Theme
+initTheme();
 
 // Lotto Generator Web Component
 class LottoGenerator extends HTMLElement {
@@ -131,7 +119,6 @@ class LottoGenerator extends HTMLElement {
       <div class="generator-card">
         <h2>행운의 번호를 뽑아보세요!</h2>
         <div class="numbers-container">
-          <!-- Numbers will be injected here -->
           <p style="color: var(--text-color); opacity: 0.5;">버튼을 눌러 번호를 생성하세요</p>
         </div>
         <button id="generate-btn">번호 생성하기</button>
